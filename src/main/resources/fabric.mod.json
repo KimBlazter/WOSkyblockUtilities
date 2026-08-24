@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "woskyblockutilities",
+	"version": "${version}",
+	"name": "WOSkyblockUtilities",
+	"description": "Adds a lot of utilities for Water Only Skyblock",
+	"authors": [
+		"KimBlazter",
+		"ctl-loc"
+	],
+	"contact": {
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT-Licence",
+	"icon": "assets/woskyblockutilities/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.kimblazter.woskyblockutilities.WOSkyblockUtilities"
+		],
+		"client": [
+			"net.kimblazter.woskyblockutilities.client.WOSkyblockUtilitiesClient"
+		],
+		"fabric-datagen": [
+			"net.kimblazter.woskyblockutilities.client.WOSkyblockUtilitiesDataGenerator"
+		]
+	},
+	"mixins": [
+		"woskyblockutilities.mixins.json",
+		{
+			"config": "woskyblockutilities.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~1.20.6",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
