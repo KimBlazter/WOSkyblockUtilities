@@ -24,6 +24,6 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.PUTRID_SOUP, Models.GENERATED);
-
+        itemModelGenerator.register(ModItems.CARAVAN_HORN, Models.GENERATED);
     }
 }

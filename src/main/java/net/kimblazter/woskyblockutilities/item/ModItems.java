@@ -27,6 +27,9 @@ public class ModItems {
                                                                         DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE,
                                                                         true)));
 
+    public static final Item CARAVAN_HORN = registerItem("caravan_horn",
+                                                         new CaravanHorn(new Item.Settings().rarity(Rarity.RARE).maxCount(1).maxDamage(5)));
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, WOSkyblockUtilities.id(name), item);
     }

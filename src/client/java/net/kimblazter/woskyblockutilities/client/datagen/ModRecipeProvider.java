@@ -23,6 +23,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
+        // Putrid soup
         ShapelessRecipeJsonBuilder
                 .create(RecipeCategory.MISC, ModItems.PUTRID_SOUP)
                 .input(Items.BOWL)
@@ -30,6 +31,19 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(ItemTags.FISHES)
                 .input(Items.ROTTEN_FLESH)
                 .criterion(hasItem(Items.ROTTEN_FLESH), conditionsFromItem(Items.ROTTEN_FLESH))
+                .offerTo(exporter);
+
+        // Caravan Horn
+        ShapedRecipeJsonBuilder
+                .create(RecipeCategory.MISC, ModItems.CARAVAN_HORN)
+                .pattern(" E ")
+                .pattern("#H#")
+                .pattern(" L ")
+                .input('E', Items.EMERALD)
+                .input('#', Items.IRON_NUGGET)
+                .input('H', Items.GOAT_HORN)
+                .input('L', Items.LEATHER)
+                .criterion(hasItem(Items.GOAT_HORN), conditionsFromItem(Items.GOAT_HORN))
                 .offerTo(exporter);
         offerCompactingRecipe(exporter, RecipeCategory.DECORATIONS, ModItems.COMPRESSED_LILY_PAD, Items.LILY_PAD);
         offer2x2CompactingRecipe(exporter, RecipeCategory.DECORATIONS, Items.MOSS_BLOCK, ModItems.COMPRESSED_LILY_PAD);
